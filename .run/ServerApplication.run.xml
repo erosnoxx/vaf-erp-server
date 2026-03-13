@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <envs>
+      <env name="DB_HOST" value="localhost" />
+      <env name="DB_NAME" value="vaf_erp" />
+      <env name="DB_PORT" value="5432" />
+      <env name="DB_PWD" value="vaf" />
+      <env name="DB_SCHEMA" value="developer" />
+      <env name="DB_USER" value="vaf" />
+      <env name="SEC_KEY" value="49bd2f98-8c2f-4f10-bd2f-988c2f2f105f" />
+      <env name="SERVER_PORT" value="8080" />
+      <env name="VIACEP_URL" value="https://viacep.com.br/ws" />
+      <env name="ACTIVE_PROFILE" value="dev" />
+    </envs>
+    <module name="server" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="vaf.erp.server.ServerApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
