@@ -16,7 +16,6 @@ import java.util.UUID;
 @RestController @RequestMapping("/routes")
 public class RouteController {
     private final CreateRouteUseCase createRoute;
-    private final AddCityToRouteUseCase addCity;
     private final DeactivateRouteUseCase deactivateRoute;
     private final RenameRouteUseCase renameRoute;
 
@@ -26,7 +25,6 @@ public class RouteController {
             DeactivateRouteUseCase deactivateRoute,
             RenameRouteUseCase renameRoute) {
         this.createRoute = createRoute;
-        this.addCity = addCity;
         this.deactivateRoute = deactivateRoute;
         this.renameRoute = renameRoute;
     }
@@ -34,14 +32,6 @@ public class RouteController {
     @PostMapping
     public ResponseEntity<UUIDResponse> create(@RequestBody @Valid CreateRouteRequest request) {
         return ResponseEntity.status(201).body(createRoute.execute(request));
-    }
-
-    @PostMapping("/{id}/cities")
-    public ResponseEntity<UUIDResponse> addCity(
-            @PathVariable UUID id,
-            @RequestBody @Valid AddCityToRouteRequest request
-    ) {
-        return ResponseEntity.status(201).body(addCity.execute(id, request));
     }
 
     @PatchMapping("/{id}/deactivate")
